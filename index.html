@@ -78,13 +78,21 @@ function addComment() {
   const comment = commentInput.value.trim();
 
   if (name === '') {
-    alert('Пожалуйста, укажите ваше имя.');
+    nameInput.classList.add('error');
     return;
   }
+  
   if (comment === '') {
-    alert('Пожалуйста, напишите комментарий.');
+    commentInput.classList.add('error');
     return;
   }
+
+  function clearErrors() {
+    nameInput.classList.remove('error');
+    commentInput.classList.remove('error');
+  }
+  nameInput.addEventListener('input', clearErrors);
+  commentInput.addEventListener('input', clearErrors);
 
   const newComment = document.createElement('li');
   newComment.classList.add('comment');

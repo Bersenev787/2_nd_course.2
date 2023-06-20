@@ -139,5 +139,7 @@ body {
     opacity: 0.9;
   }
 
-
+ .error {
+  background-color: rgb(226, 138, 138);
+ }
 
